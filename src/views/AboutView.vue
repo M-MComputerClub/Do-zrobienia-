@@ -3,7 +3,7 @@ import { ref, onMounted, computed, watch } from 'vue'
 
 const todos = ref([])
 
-const input_content = ref('')
+const input_name = ref('')
 const input_description = ref('')
 const input_icon = ref('')
 const input_color = ref('')
@@ -23,12 +23,12 @@ watch(todos, (newVal) => {
 })
 
 const addTodo = () => {
-	if (input_content.value.trim() === '') {
+	if (input_name.value.trim() === '') {
 		return
 	}
 
 	todos.value.push({
-		content: input_content.value,
+		name: input_name.value,
 		description: input_description.value,
 		icon: input_icon.value,
 		color: input_color.value,
@@ -52,10 +52,10 @@ onMounted(() => {
 			<form id="new-todo-form" @submit.prevent="addTodo">
 				<input 
 					type="text" 
-					name="content" 
-					id="content" 
+					name="name" 
+					id="name" 
 					placeholder="Nazwa"
-					v-model="input_content" />
+					v-model="input_name" />
 				<input 
 					type="text" 
 					name="Description" 
