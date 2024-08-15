@@ -81,18 +81,19 @@ onMounted(() => {
 <template>
 	<main class="app">
 		<section class="todo-list">
-			<h1 class="justify-center flex font-medium">TODO LIST</h1>
+			<h1 class="justify-center flex text-3xl font-semibold">To-Do List</h1>
 			<div class="list" id="todo-list">
 
 				<div v-for="todo in todos_asc" class="">
-					<div class="todo-content m-2.5" :style="divStyle(todo.color)">
-						<p>{{todo.icon}}</p>
-						<p>{{todo.content}}</p>
-						<p>{{todo.description}}</p>
-						<p>{{todo.color}}</p>
-            <div class="actions">
-              <button button class="delete bg-red-200" @click="removeTodo(todo)">Delete</button>
-            </div>
+					<div class="todo-content m-2.5 ml-64 mr-64 rounded-lg flex p-4 bg-zinc-800 justify-between">
+						<p class=" w-10 h-10 rounded-md flex items-center justify-center text-2xl" :style="divStyle(todo.color)">{{todo.icon}}</p>
+						<div class=" text-white flex flex-col items-start justify-start w-5/6">
+							<p class="text-xl font-semibold">{{todo.name}}</p>
+							<p class="text-sm font-light">{{todo.description}}</p>
+						</div>
+						<div class="actions">
+							<button button class="delete w-10 h-10 rounded-md flex items-center justify-center text-2xl" @click="removeTodo(todo)" :style="divStyle(todo.color)">X</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -152,10 +153,10 @@ onMounted(() => {
 		</section>
 
 
-    <footer class="flex justify-around fixed bottom-5 left-0 right-0 items-center">
-      <div class="size-10 bg-yellow-500 items-center flex justify-center rounded-full">h</div>
-      <button class="size-12 bg-yellow-500 rounded-full" @click="add_menu = !add_menu">+</button>
-      <div class="size-10 bg-yellow-500 items-center flex justify-center rounded-full">j</div>
+	<footer class="flex justify-around fixed bottom-5 left-0 right-0 items-center">
+      <div class="size-10 bg-zinc-500 items-center flex justify-center rounded-full">h</div>
+      <button class="size-12 bg-zinc-500 rounded-full text-2xl" @click="">+</button>
+      <div class="size-10 bg-zinc-500 items-center flex justify-center rounded-full">j</div>
     </footer>
 	</main>
 </template>
