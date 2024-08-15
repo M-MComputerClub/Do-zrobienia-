@@ -4,11 +4,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <body class=" bg-zinc-900 w-screen h-screen text-white">
-    <header>
-      <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/todo">ToDo</RouterLink>
+    <header class="w-screen">
+      <div class="wrapper pl-16">
+        <nav class="flex w-screen p-32 font-semibold ">
+          <RouterLink to="/" class="hover:underline">Home</RouterLink>
+          <RouterLink to="/todo" class="hover:underline">ToDo</RouterLink>
         </nav>
       </div>
     </header>
