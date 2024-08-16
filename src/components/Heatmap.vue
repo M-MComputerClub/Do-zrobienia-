@@ -42,11 +42,10 @@
         ));
       },
       getColor(value) {
-        // Simple gradient logic: adjust as needed
-        if (value > 75) return '#FF4C4C'; // Red
-        if (value > 50) return '#FF9F4C'; // Orange
-        if (value > 25) return '#FFEC4C'; // Yellow
-        return '#4CFF4C'; // Green
+        if (value > 75) return '#003D00';
+        if (value > 50) return '#002C00'; 
+        if (value > 25) return '#001C00'; 
+        return '#00FF00';
       },
       showTooltip(week) {
         this.tooltip = `Value: ${week.value.toFixed(2)}`;
