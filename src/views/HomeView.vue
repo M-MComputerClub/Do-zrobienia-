@@ -4,7 +4,7 @@ import heatmap from '../components/Heatmap.vue'
 
 export default {
   components: {
-    Heatmap,
+    heatmap,
   },
 };
 </script>
@@ -12,7 +12,7 @@ export default {
 <template>
   <header>
     <h1 class=" text-7xl pl-32">Dzień dobry</h1>
-    <Heatmap />
+    <heatmap />
   </header>
   <main>
 
