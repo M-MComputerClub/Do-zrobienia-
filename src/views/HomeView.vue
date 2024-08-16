@@ -1,10 +1,18 @@
-<script setup>
+<script>
 import TheWelcome from '../components/TheWelcome.vue'
+import heatmap from '../components/Heatmap.vue'
+
+export default {
+  components: {
+    Heatmap,
+  },
+};
 </script>
 
 <template>
   <header>
     <h1 class=" text-7xl pl-32">Dzień dobry</h1>
+    <Heatmap />
   </header>
   <main>
 
