@@ -121,33 +121,36 @@ onMounted(() => {
 
 		
 
-    <section class="create-todo bg-gray-200 h-screen p-10 fixed top-32 left-0 right-0 rounded-t-md animate-slideInBottom" v-if="add_menu">
+    <section class="create-todo bg-zinc-800 h-screen p-10 fixed top-98 left-0 right-0 rounded-t-3xl animate-slideInBottom" v-if="add_menu">
 			<form id="new-todo-form" class="flex flex-col justify-center items-center gap-4" @submit.prevent="addTodo">
 				<input 
 					type="text" 
 					name="name" 
 					id="name" 
 					placeholder="Nazwa"
-					v-model="input_name" required>
+					v-model="input_name" required
+					class="text-black rounded-md md:w-1/5" />
 				<input 
 					type="text" 
 					name="Description" 
 					id="description" 
 					placeholder="Opis"
-					v-model="input_description" required/>
+					v-model="input_description" required
+					class="text-black rounded-md  md:w-1/5" />
 				<input 
 					type="text" 
 					name="icon" 
 					id="icon" 
 					placeholder="&#128512;"
-					v-model="input_icon" required/>
+					v-model="input_icon" required
+					class="text-black rounded-md  md:w-1/5" />
 				<input 
 					type="color" 
 					name="color" 
 					id="color" 
 					placeholder="#a72020"
-					v-model="input_color" required/>
-
+					v-model="input_color" required
+					class="sm:w-1/5 w-2/4 h-16"/>
 				<input type="submit" value="Add todo" class="bg-slate-500">
 			</form>
 		</section>

@@ -2,6 +2,7 @@
   <header>
     <h1 class="md:text-7xl text-3xl pl-4 md:pl-32">{{ greeting }}</h1>
     <h2 class="md:text-4xl text-1xl pl-4 md:pl-32 text-zinc-300">{{ dateMessage }}</h2>
+    <heatmap />
   </header>
   <main>
 
@@ -14,6 +15,7 @@
 </template>
 
 <script setup>
+import Heatmap from '../components/Heatmap.vue';
 import { computed } from 'vue';
 
 const getCurrentGreeting = () => {
@@ -47,4 +49,7 @@ const getDateMessage = () => {
 
 const greeting = computed(() => getCurrentGreeting());
 const dateMessage = computed(() => getDateMessage());
+
+
+
 </script>

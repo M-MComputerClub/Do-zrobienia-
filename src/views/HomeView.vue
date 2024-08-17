@@ -1,12 +1,6 @@
 <script>
 import TheWelcome from '../components/TheWelcome.vue'
-import heatmap from '../components/Heatmap.vue'
 
-export default {
-  components: {
-    heatmap,
-  },
-};
 </script>
 
 <template>
