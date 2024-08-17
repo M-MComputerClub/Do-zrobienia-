@@ -85,7 +85,7 @@ onMounted(() => {
 			<div class="list" id="todo-list">
 
 				<div v-for="todo in todos_asc" class="">
-					<div class="todo-content m-2.5 ml-64 mr-64 rounded-lg flex p-4 bg-zinc-800 justify-between">
+					<div class="todo-content m-2.5 lg:ml-64 md:ml-16 ml-8 md:mr-16 lg:mr-64 mr-8 rounded-lg flex p-4 bg-zinc-800 justify-between">
 						<p class=" w-10 h-10 rounded-md flex items-center justify-center text-2xl" :style="divStyle(todo.color)">{{todo.icon}}</p>
 						<div class=" text-white flex flex-col items-start justify-start w-5/6">
 							<p class="text-xl font-semibold">{{todo.name}}</p>
