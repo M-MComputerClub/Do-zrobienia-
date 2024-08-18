@@ -7,8 +7,8 @@
 			<div class="todo-content m-2.5 lg:ml-64 md:ml-16 ml-8 md:mr-16 lg:mr-64 mr-8 rounded-lg flex p-4 bg-zinc-800 justify-between">
 			  <p class="w-10 h-10 rounded-md flex items-center justify-center text-2xl" :style="divStyle(todo.color)">{{todo.icon}}</p>
 			  <div class="text-white flex flex-col items-start justify-start w-5/6">
-				<p class="text-xl font-semibold">{{todo.name}}</p>
-				<p class="text-sm font-light">{{todo.description}}</p>
+				<p class="text-xl font-semibold pl-2 pr-2">{{todo.name}}</p>
+				<p class="text-sm font-light pl-2 pr-2">{{todo.description}}</p>
 			  </div>
 			  <div class="actions">
 				<button class="delete w-10 h-10 rounded-md flex items-center justify-center text-2xl" @click="removeTodo(todo)" :style="divStyle(todo.color)">X</button>
