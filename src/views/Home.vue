@@ -2,20 +2,18 @@
   <header>
     <h1 class="md:text-7xl text-3xl pl-4 md:pl-32">{{ greeting }}</h1>
     <h2 class="md:text-4xl text-1xl pl-4 md:pl-32 text-zinc-300">{{ dateMessage }}</h2>
-    <heatmap />
   </header>
   <main>
-
+    <heatmap />
   </main>
-  <footer class="flex justify-around fixed bottom-5 left-0 right-0 items-center">
-      <div class="size-10 bg-zinc-500 items-center flex justify-center rounded-full">h</div>
-      <button class="size-12 bg-zinc-500 rounded-full text-2xl" @click="">+</button>
-      <div class="size-10 bg-zinc-500 items-center flex justify-center rounded-full">j</div>
-    </footer>
+  <footer>
+    <NavBar />
+  </footer>
 </template>
 
 <script setup>
 import Heatmap from '../components/Heatmap.vue';
+import NavBar from '../components/NavBar.vue'
 import { computed } from 'vue';
 
 const getCurrentGreeting = () => {
