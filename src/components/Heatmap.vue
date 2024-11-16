@@ -1,36 +1,25 @@
 <template>
   <div class="flex flex-col items-center p-4">
-    <div class="flex">
-      <div
-        v-for="(day, index) in days"
-        :key="index"
-        class="relative flex flex-col items-center"
-      >
-        <div
-          v-for="(week, weekIndex) in day"
-          :key="weekIndex"
-          class="w-6 h-6 m-1 rounded-sm"
-          :style="{ backgroundColor: getColor(week.value) }"
-        ></div>
-        <!-- @mouseover="showTooltip(week)" -->
-        <!-- @mouseleave="hideTooltip" -->
-        <div
-          v-if="tooltip"
-          class="absolute bg-gray-700 text-white text-xs rounded py-1 px-2"
-          :style="{
-            top: tooltipPosition.top + 'px',
-            left: tooltipPosition.left + 'px',
-          }"
-        >
-          {{ tooltip }}
+    <div>
+      <button @click="addDoneHabbit()">addddd</button>
+      <br />
+      <button @click="nextday()">d111111</button>
+      <!-- <button @click="console.log(rows)">d2222222</button> -->
+      <!-- days[-1].value += 10 -->
+    </div>
+    <div class="flex flex-col items-center p-4">
+      <div class="flex">
+        <div v-for="row in rows" :key="row[0]">
+          <div
+            v-for="cell in row"
+            :key="cell"
+            class="w-6 h-6 m-1 rounded-sm"
+            :style="{ backgroundColor: getColor(cell.value) }"
+          >
+            <!-- {{ cell.value }} -->
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <button @click="days[days.length - 1][7].value += 25">addddd</button>
-      <br />
-      <button @click="days[0].shift()">deleteeeeee</button>
-      <!-- days[-1].value += 10 -->
     </div>
   </div>
 </template>
@@ -40,19 +29,13 @@ export default {
   data() {
     return {
       days: this.generateHeatmapData(), // Replace with your data source
-      tooltip: null,
-      tooltipPosition: { top: 0, left: 0 },
     };
   },
   methods: {
     generateHeatmapData() {
-      // Sample data generation: an array of weeks with each week containing days
-      // Replace this with actual data fetching logic
-      return Array.from({ length: 7 }, (_, i) =>
-        Array.from({ length: 8 }, (_, j) => ({
-          value: Math.random() * 100, // Random value for demonstration
-        }))
-      );
+      return Array.from({ length: 49 }, (_, j) => ({
+        value: Math.random() * 100,
+      }));
     },
     getColor(value) {
       if (value > 75) return "#00FF00";
@@ -61,11 +44,34 @@ export default {
       // if (value < 25) return "#001C00";
       return "#001000";
     },
-    showTooltip(week) {
+    nextday() {
+      // this.days[0].shift();
+      this.days.shift();
+      this.days.push({ value: 0 });
+      // this.rows = rows();
+      // this.rows[0].shift();
+      console.log(this.rows);
+      console.log(this.days);
       // this.tooltip = `Value: ${week.value.toFixed(2)}`;
     },
-    hideTooltip() {
-      this.tooltip = null;
+    addDoneHabbit() {
+      this.days[this.days.length - 1].value += 33;
+    },
+  },
+  computed: {
+    rows() {
+      let rows_t = [];
+      let lista = this.days;
+      // for (let index = 1; index <= 35; index++) {
+      //   lista.push(index);
+      // }
+      // console.log(lista);
+      // let lista = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      for (let i = 0; i < lista.length; i += 7) {
+        rows_t.push(lista.slice(i, i + 7));
+      }
+      // console.log(rows_t);
+      return rows_t;
     },
   },
 };

@@ -47,6 +47,7 @@ const getDateMessage = () => {
   }
 };
 
+const rows = computed(() => {});
 const greeting = computed(() => getCurrentGreeting());
 const dateMessage = computed(() => getDateMessage());
 </script>
